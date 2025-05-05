@@ -102,21 +102,34 @@ h1 {
   background: #f0f0f0;
 }
 
+/* Estilo para feriados */
 .holiday {
-  background-color: #ffe6e6 !important;
-  color: #dc3545 !important;
+  background-color: #fff3cd !important; /* Amarelo claro */
+  color: #856404 !important; /* Texto em marrom */
+  position: relative;
+  font-weight: 500;
 }
 
 .holiday::after {
-  content: '';
+  content: '🏖️';
   position: absolute;
-  bottom: 4px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background-color: #dc3545;
+  top: 2px;
+  right: 2px;
+  font-size: 8px;
+}
+
+/* Estado hover do feriado */
+.holiday:enabled:hover,
+.holiday:enabled:focus {
+  background-color: #ffeeba !important;
+  color: #533f03 !important;
+}
+
+/* Quando um feriado está selecionado */
+.holiday.selected {
+  background-color: #17a2b8 !important; /* Azul mais vibrante */
+  color: white !important;
+  font-weight: bold;
 }
 
 .selected {
@@ -389,10 +402,14 @@ button:hover {
     font-size: 0.75em;
   }
 
+  .holiday {
+    font-size: 0.9em;
+  }
+
   .holiday::after {
-    bottom: 2px;
-    width: 3px;
-    height: 3px;
+    font-size: 6px;
+    top: 1px;
+    right: 1px;
   }
 }
 
