@@ -1,44 +1,39 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Calendar from 'react-calendar';
-import { isSameDay, parseISO } from 'date-fns';
-import { holidays } from './holidays';
-import './styles.css';
+import { isHoliday } from './holidays';
+import { format } from 'date-fns';
+import ptBR from 'date-fns/locale/pt-BR';
 
 const CalendarComponent = ({ onChange }) => {
-  const [selectedDates, setSelectedDates] = useState([]);
-
-  const handleDateClick = (date) => {
-    const alreadySelected = selectedDates.some((selectedDate) =>
-      isSameDay(selectedDate, date)
-    );
-    let newDates;
-    if (alreadySelected) {
-      newDates = selectedDates.filter(
-        (selectedDate) => !isSameDay(selectedDate, date)
-      );
-    } else {
-      newDates = [...selectedDates, date];
+  const tileClassName = ({ date }) => {
+    const classes = [];
+    if (isHoliday(date)) {
+      classes.push('holiday');
     }
-    setSelectedDates(newDates);
-    onChange(newDates);
+    return classes;
   };
 
-  const tileClassName = ({ date }) => {
-    const isHoliday = holidays.some((holiday) =>
-      isSameDay(parseISO(holiday), date)
-    );
-    const isSelected = selectedDates.some((selectedDate) =>
-      isSameDay(selectedDate, date)
-    );
-    if (isHoliday) return 'holiday';
-    if (isSelected) return 'selected';
-    return null;
+  const formatMonthYear = (_, date) => {
+    try {
+      return format(new Date(date), 'MMMM yyyy', { locale: ptBR })
+        .replace(/^\w/, (c) => c.toUpperCase());
+    } catch (error) {
+      console.error('Erro ao formatar data:', error);
+      return '';
+    }
   };
 
   return (
     <Calendar
-      onClickDay={handleDateClick}
+      onChange={onChange}
+      selectRange={false}
       tileClassName={tileClassName}
+      formatMonthYear={formatMonthYear}
+      locale="pt-BR"
+      navigationLabel={({ date, label, locale, view }) => formatMonthYear(locale, date)}
+      showNeighboringMonth={false}
+      minDetail="month"
+      defaultView="month"
     />
   );
 };
