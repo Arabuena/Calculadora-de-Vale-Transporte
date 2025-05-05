@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import CalendarComponent from './CalendarComponent.jsx';
 import FareCalculator from './FareCalculator.jsx';
 import Banner from './Banner.jsx';
+import InstallPrompt from './components/InstallPrompt';
 
 const App = () => {
   const [selectedDates, setSelectedDates] = useState([]);
@@ -14,6 +15,7 @@ const App = () => {
 
   return (
     <div className="app-container">
+      <InstallPrompt />
       <Banner />
       <h1>Calculadora de Vale Transporte</h1>
       <div className="fare-input">
