@@ -1,0 +1,31 @@
+{
+  "name": "vale-transporte",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.jsx",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "generate-pwa-assets": "pwa-assets-generator",
+    "generate-icons": "svgr public/favicon.svg -d public/icons"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "date-fns": "^4.1.0",
+    "react": "^19.1.0",
+    "react-calendar": "^5.1.0",
+    "react-dom": "^19.1.0",
+    "react-to-pdf": "^2.0.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@svgr/cli": "^8.1.0",
+    "@vitejs/plugin-react": "^4.0.0",
+    "vite": "^6.3.4",
+    "vite-plugin-pwa": "^1.0.0"
+  }
+}

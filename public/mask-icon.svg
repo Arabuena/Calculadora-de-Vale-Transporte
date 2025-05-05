@@ -1,0 +1,20 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fundo -->
+  <rect width="512" height="512" rx="100" fill="black"/>
+  
+  <!-- Calculadora -->
+  <rect x="96" y="96" width="320" height="320" rx="20" fill="black"/>
+  
+  <!-- Display -->
+  <rect x="116" y="126" width="280" height="80" rx="8" fill="black"/>
+  
+  <!-- Ônibus estilizado -->
+  <path d="M156 236 H356 Q376 236 376 256 V276 Q376 296 356 296 H156 Q136 296 136 276 V256 Q136 236 156 236" fill="black"/>
+  <circle cx="176" cy="276" r="15" fill="black"/>
+  <circle cx="336" cy="276" r="15" fill="black"/>
+  
+  <!-- Botões -->
+  <rect x="116" y="316" width="80" height="80" rx="8" fill="black"/>
+  <rect x="216" y="316" width="80" height="80" rx="8" fill="black"/>
+  <rect x="316" y="316" width="80" height="80" rx="8" fill="black"/>
+</svg> 
