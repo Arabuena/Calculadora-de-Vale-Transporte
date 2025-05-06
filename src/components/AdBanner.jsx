@@ -1,24 +1,18 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const AdBanner = () => {
-  useEffect(() => {
-    console.log('AdBanner montado');
-  }, []);
-
   return (
     <div className="ad-banner-container">
       <a 
         href="https://www.profitableratecpm.com/ibs5zaqf?key=be17333b70911d1e3d3fe6b73762de0f" 
         rel="nofollow" 
         target="_blank"
+        className="ad-banner-link"
       >
-        <img 
-          alt="banner" 
-          src="https://landings-cdn.adsterratech.com/referralBanners/gif/120x60_adsterra_reff.gif"
-          className="ad-banner-image"
-          onLoad={() => console.log('Imagem carregada')}
-          onError={(e) => console.log('Erro ao carregar imagem:', e)}
-        />
+        <div className="ad-banner-content">
+          <span className="ad-banner-text">Monetize seu site</span>
+          <span className="ad-banner-cta">Clique aqui!</span>
+        </div>
       </a>
     </div>
   );
