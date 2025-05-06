@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
-import CalendarComponent from './CalendarComponent.jsx';
-import FareCalculator from './FareCalculator.jsx';
-import Banner from './Banner.jsx';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import CalendarComponent from './components/CalendarComponent';
+import FareCalculator from './components/FareCalculator';
+import Footer from './components/Footer';
+import Banner from './components/Banner';
 import InstallPrompt from './components/InstallPrompt';
+import Calculator from './pages/Calculator';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 const App = () => {
   const [selectedDates, setSelectedDates] = useState([]);
@@ -14,25 +18,33 @@ const App = () => {
   };
 
   return (
-    <div className="app-container">
-      <InstallPrompt />
-      <Banner />
-      <h1>Calculadora de Vale Transporte</h1>
-      <div className="fare-input">
-        <label>
-          Valor da passagem por dia: R$
-          <input
-            type="number"
-            step="0.01"
-            min="0"
-            value={farePerDay}
-            onChange={handleFareChange}
-          />
-        </label>
-      </div>
-      <CalendarComponent onChange={setSelectedDates} />
-      <FareCalculator selectedDates={selectedDates} farePerDay={farePerDay} />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={
+          <div className="app">
+            <Banner />
+            <InstallPrompt />
+            <h1>Calculadora de Vale Transporte</h1>
+            <div className="fare-input">
+              <label>
+                Valor da passagem por dia: R$
+                <input
+                  type="number"
+                  step="0.01"
+                  min="0"
+                  value={farePerDay}
+                  onChange={handleFareChange}
+                />
+              </label>
+            </div>
+            <CalendarComponent onChange={setSelectedDates} />
+            <FareCalculator selectedDates={selectedDates} farePerDay={farePerDay} />
+            <Footer />
+          </div>
+        } />
+        <Route path="/politica-de-privacidade" element={<PrivacyPolicy />} />
+      </Routes>
+    </Router>
   );
 };
 

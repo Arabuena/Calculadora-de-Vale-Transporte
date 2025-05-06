@@ -1,0 +1,398 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+.footer {
+  margin-top: 2rem;
+  padding: 1.5rem 0;
+  border-top: 2px solid #3498db;
+  background: linear-gradient(to right, #2c3e50, #3498db);
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.footer-links {
+  margin-bottom: 0.5rem;
+}
+
+.privacy-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.privacy-link:hover {
+  color: #e6e6e6;
+  text-decoration: underline;
+}
+
+.footer-credits {
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.credits-link {
+  color: #f1c40f;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.credits-link:hover {
+  color: #f39c12;
+  text-decoration: underline;
+}
+
+.ad-container {
+  margin: 2rem 0;
+  text-align: center;
+  min-height: 250px;
+}
+
+/* Estilos para o calendário e calculadora */
+.calendar-container {
+  margin-bottom: 2rem;
+}
+
+.fare-calculator {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Estilos para inputs e botões */
+input {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 0.5rem 0;
+}
+
+button {
+  background-color: #2c3e50;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #34495e;
+}
+
+/* Estilos para o InstallPrompt */
+.install-prompt {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.install-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-install {
+  background-color: #4CAF50;
+}
+
+.btn-later {
+  background-color: #666;
+}
+
+/* Estilos para o input de valor da passagem */
+.fare-input {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.fare-input label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.fare-input input {
+  width: 100px;
+}
+
+/* Estilos para o calendário */
+.calendar {
+  width: 100%;
+  max-width: 100%;
+  background: white;
+  border: none !important;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.react-calendar__tile {
+  padding: 0.75em 0.5em;
+  background: none;
+  text-align: center;
+  line-height: 16px;
+  color: #333;
+  font-size: 0.9em;
+  position: relative;
+}
+
+/* Dias selecionados */
+.selected {
+  background: #2c3e50 !important;
+  color: white !important;
+  border-radius: 4px;
+}
+
+/* Garantir que fins de semana e feriados selecionados mantenham a cor branca */
+.selected.weekend,
+.selected.holiday {
+  color: white !important;
+}
+
+/* Hover em dias selecionados */
+.selected:hover {
+  background: #34495e !important;
+}
+
+/* Hover em dias não selecionados */
+.react-calendar__tile:enabled:hover:not(.selected) {
+  background-color: #e6e6e6;
+  border-radius: 4px;
+}
+
+/* Remover todos os estilos padrão do react-calendar para dias ativos */
+.react-calendar__tile--active,
+.react-calendar__tile--hasActive,
+.react-calendar__tile--now {
+  background: inherit !important;
+  color: inherit !important;
+}
+
+/* Manter cores originais para fins de semana e feriados não selecionados */
+.weekend:not(.selected) {
+  color: #e74c3c !important;
+}
+
+.holiday:not(.selected) {
+  color: #e67e22 !important;
+}
+
+/* Cabeçalho dos dias da semana */
+.react-calendar__month-view__weekdays {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.8em;
+  color: #2c3e50;
+  padding: 0.5rem 0;
+}
+
+/* Botões de navegação */
+.react-calendar__navigation button {
+  min-width: 44px;
+  background: none;
+  font-size: 1rem;
+  color: #2c3e50;
+  padding: 0.5rem;
+  margin: 0.25rem;
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: #e6e6e6;
+  border-radius: 4px;
+}
+
+/* Remover sublinhado dos dias da semana */
+.react-calendar__month-view__weekdays__weekday {
+  text-decoration: none !important;
+}
+
+.react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none !important;
+  cursor: default;
+}
+
+/* Estilos para o banner */
+.banner {
+  background: linear-gradient(135deg, #2c3e50, #3498db);
+  color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.banner h2 {
+  margin-bottom: 0.5rem;
+}
+
+.banner-button {
+  display: inline-block;
+  background: white;
+  color: #2c3e50;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  text-decoration: none;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+/* Estilos do Resumo */
+.fare-calculator {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-top: 2rem;
+}
+
+.summary p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.total {
+  font-weight: bold;
+  font-size: 1.2rem !important;
+  margin-top: 1rem !important;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-pdf {
+  background-color: #e74c3c;
+}
+
+.btn-excel {
+  background-color: #27ae60;
+}
+
+.btn-share {
+  background-color: #3498db;
+}
+
+/* Ajustes de responsividade */
+@media (max-width: 768px) {
+  .action-buttons {
+    flex-direction: column;
+  }
+  
+  .action-buttons button {
+    width: 100%;
+  }
+}
+
+.banner-ad {
+  width: 100%;
+  min-height: 250px;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Remover o destaque do dia atual */
+.react-calendar__tile--now {
+  background: transparent !important;
+  color: inherit !important;
+}
+
+/* Remover qualquer estilo adicional do dia atual quando hover */
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
+  background-color: #e6e6e6 !important;
+  color: inherit !important;
+}
+
+/* Garantir que mesmo o dia atual siga as regras de seleção */
+.react-calendar__tile--now.selected {
+  background: #2c3e50 !important;
+  color: white !important;
+}
+
+/* Garantir que o hover do dia atual selecionado siga o padrão */
+.react-calendar__tile--now.selected:hover {
+  background: #34495e !important;
+}
+
+/* Estilos para a página de privacidade */
+.privacy-policy {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.privacy-policy h1 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.privacy-policy h2 {
+  color: #3498db;
+  margin-top: 2rem;
+}
+
+.privacy-policy p {
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+.privacy-policy .back-link {
+  display: inline-block;
+  margin-top: 2rem;
+  color: #3498db;
+  text-decoration: none;
+}
+
+.privacy-policy .back-link:hover {
+  text-decoration: underline;
+} 

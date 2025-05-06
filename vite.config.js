@@ -7,17 +7,12 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
+      includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
       manifest: {
-        name: 'Calculadora de Vale Transporte',
-        short_name: 'Vale Transporte',
-        description: 'Calculadora de Vale Transporte com recursos offline',
-        theme_color: '#2c3e50',
-        background_color: '#ffffff',
-        display: 'standalone',
-        orientation: 'portrait',
-        start_url: '/',
-        prefer_related_applications: false,
+        name: 'Calculadora de Vale-Transporte',
+        short_name: 'Vale-Transporte',
+        description: 'Calculadora de Vale-Transporte',
+        theme_color: '#ffffff',
         icons: [
           {
             src: 'pwa-192x192.png',
@@ -28,30 +23,8 @@ export default defineConfig({
             src: 'pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png'
-          },
-          {
-            src: 'pwa-512x512.png',
-            sizes: '512x512',
-            type: 'image/png',
-            purpose: 'any maskable'
           }
         ]
-      },
-      workbox: {
-        runtimeCaching: [{
-          urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,
-          handler: 'CacheFirst',
-          options: {
-            cacheName: 'google-fonts-cache',
-            expiration: {
-              maxEntries: 10,
-              maxAgeSeconds: 60 * 60 * 24 * 365 // 1 year
-            },
-            cacheableResponse: {
-              statuses: [0, 200]
-            }
-          }
-        }]
       }
     })
   ],

@@ -7,25 +7,25 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "generate-pwa-assets": "pwa-assets-generator",
-    "generate-icons": "svgr public/favicon.svg -d public/icons"
+    "generate-pwa-assets": "pwa-assets-generator"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "date-fns": "^4.1.0",
-    "react": "^19.1.0",
-    "react-calendar": "^5.1.0",
-    "react-dom": "^19.1.0",
-    "react-to-pdf": "^2.0.0",
+    "date-fns": "^2.30.0",
+    "jspdf": "^2.5.1",
+    "react": "^18.2.0",
+    "react-calendar": "^4.6.1",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^7.5.3",
+    "react-to-pdf": "^1.0.1",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
-    "@svgr/cli": "^8.1.0",
-    "@vitejs/plugin-react": "^4.0.0",
-    "vite": "^6.3.4",
-    "vite-plugin-pwa": "^1.0.0"
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.0.0",
+    "vite-plugin-pwa": "^0.17.4"
   }
 }
