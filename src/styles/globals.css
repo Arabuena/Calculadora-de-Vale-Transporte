@@ -448,4 +448,18 @@ button:hover {
 
 .privacy-policy .back-link:hover {
   text-decoration: underline;
+}
+
+/* Estilos para o banner de anúncio */
+.ad-banner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  padding: 1rem;
+}
+
+.ad-banner-image {
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 } 

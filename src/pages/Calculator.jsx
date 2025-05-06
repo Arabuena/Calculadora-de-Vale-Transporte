@@ -4,6 +4,7 @@ import FareCalculator from '../components/FareCalculator';
 import Footer from '../components/Footer';
 import Banner from '../components/Banner';
 import InstallPrompt from '../components/InstallPrompt';
+import AdBanner from '../components/AdBanner';
 
 const Calculator = () => {
   const [selectedDates, setSelectedDates] = useState([]);
@@ -33,6 +34,7 @@ const Calculator = () => {
       </div>
       <CalendarComponent onChange={setSelectedDates} />
       <FareCalculator selectedDates={selectedDates} farePerDay={farePerDay} />
+      <AdBanner />
       <Footer />
     </div>
   );
