@@ -17,6 +17,7 @@ const Calculator = () => {
 
   return (
     <div className="app">
+      <AdBanner />
       <Banner />
       <InstallPrompt />
       <h1>Calculadora de Vale Transporte</h1>
@@ -34,7 +35,6 @@ const Calculator = () => {
       </div>
       <CalendarComponent onChange={setSelectedDates} />
       <FareCalculator selectedDates={selectedDates} farePerDay={farePerDay} />
-      <AdBanner />
       <Footer />
     </div>
   );

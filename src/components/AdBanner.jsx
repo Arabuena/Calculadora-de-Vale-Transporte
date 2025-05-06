@@ -1,20 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const AdBanner = () => {
+  useEffect(() => {
+    // Remover script existente se houver
+    const existingScript = document.querySelector('script[src*="profitableratecpm.com"]');
+    if (existingScript) {
+      existingScript.remove();
+    }
+
+    // Criar e adicionar novo script
+    const script = document.createElement('script');
+    script.async = true;
+    script.setAttribute('data-cfasync', 'false');
+    script.src = '//pl26576496.profitableratecpm.com/dc2ddb957cfec84d81047be88a201264/invoke.js';
+    document.body.appendChild(script);
+  }, []);
+
   return (
-    <div className="ad-banner-container">
-      <a 
-        href="https://www.profitableratecpm.com/ibs5zaqf?key=be17333b70911d1e3d3fe6b73762de0f" 
-        rel="nofollow" 
-        target="_blank"
-        className="ad-banner-link"
-      >
-        <div className="ad-banner-content">
-          <span className="ad-banner-text">Monetize seu site</span>
-          <span className="ad-banner-cta">Clique aqui!</span>
-        </div>
-      </a>
-    </div>
+    <div id="container-dc2ddb957cfec84d81047be88a201264"></div>
   );
 };
 
