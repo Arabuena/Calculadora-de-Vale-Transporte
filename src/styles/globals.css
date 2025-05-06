@@ -69,9 +69,17 @@ h1 {
 }
 
 .ad-container {
-  margin: 2rem 0;
-  text-align: center;
-  min-height: 250px;
+  width: 100%;
+  margin: 1rem 0;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container-dc2ddb957cfec84d81047be88a201264 {
+  width: 100%;
+  min-height: 100px;
 }
 
 /* Estilos para o calendário e calculadora */
