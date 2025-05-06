@@ -7,6 +7,7 @@ import Banner from './components/Banner';
 import InstallPrompt from './components/InstallPrompt';
 import Calculator from './pages/Calculator';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import AdBanner from './components/AdBanner';
 
 const App = () => {
   const [selectedDates, setSelectedDates] = useState([]);
@@ -22,6 +23,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={
           <div className="app">
+            <AdBanner />
             <Banner />
             <InstallPrompt />
             <h1>Calculadora de Vale Transporte</h1>
@@ -39,6 +41,7 @@ const App = () => {
             </div>
             <CalendarComponent onChange={setSelectedDates} />
             <FareCalculator selectedDates={selectedDates} farePerDay={farePerDay} />
+            <AdBanner />
             <Footer />
           </div>
         } />
