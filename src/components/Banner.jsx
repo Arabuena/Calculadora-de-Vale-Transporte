@@ -2,14 +2,18 @@ import React from 'react';
 
 const Banner = () => {
   return (
-    <>
-      <script 
-        async="async" 
-        data-cfasync="false" 
-        src="//pl26576496.profitableratecpm.com/dc2ddb957cfec84d81047be88a201264/invoke.js"
-      />
-      <div id="container-dc2ddb957cfec84d81047be88a201264" className="banner-ad" />
-    </>
+    <div className="banner">
+      <h2>Calculadora de Vale Transporte</h2>
+      <p>Selecione os dias úteis no calendário e calcule o valor do seu vale transporte</p>
+      <p>Feriados e finais de semana são destacados automaticamente</p>
+      <div className="banner-features">
+        <ul>
+          <li>✓ Cálculo automático</li>
+          <li>✓ Exportação para PDF e Excel</li>
+          <li>✓ Compartilhamento fácil</li>
+        </ul>
+      </div>
+    </div>
   );
 };
 
