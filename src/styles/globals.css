@@ -79,7 +79,11 @@ h1 {
 
 #container-dc2ddb957cfec84d81047be88a201264 {
   width: 100%;
-  min-height: 100px;
+  min-height: 250px;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Estilos para o calendário e calculadora */
