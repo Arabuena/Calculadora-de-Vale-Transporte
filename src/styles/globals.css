@@ -533,4 +533,29 @@ button:hover {
   .app {
     padding-right: 150px;
   }
+}
+
+/* Estilos para o banner horizontal */
+.horizontal-banner-container {
+  width: 100%;
+  max-width: 728px;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.horizontal-banner-image {
+  width: 100%;
+  max-width: 728px;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Responsividade do banner */
+@media (max-width: 768px) {
+  .horizontal-banner-container {
+    padding: 0 1rem;
+  }
 } 
