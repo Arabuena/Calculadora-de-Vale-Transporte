@@ -1,36 +1,21 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const AdBanner = () => {
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.async = true;
-    script.setAttribute('data-cfasync', 'false');
-    script.src = '//pl26576496.profitableratecpm.com/dc2ddb957cfec84d81047be88a201264/invoke.js';
-    
-    // Limpar scripts antigos
-    const oldScript = document.querySelector('script[src*="profitableratecpm.com"]');
-    if (oldScript) {
-      oldScript.remove();
-    }
-    
-    // Adicionar novo script
-    document.head.appendChild(script);
-
-    return () => {
-      // Cleanup quando o componente for desmontado
-      script.remove();
-    };
-  }, []);
-
   return (
-    <>
-      <script 
-        async="async" 
-        data-cfasync="false" 
-        src="//pl26576496.profitableratecpm.com/dc2ddb957cfec84d81047be88a201264/invoke.js"
-      />
-      <div id="container-dc2ddb957cfec84d81047be88a201264"></div>
-    </>
+    <div className="side-banner-container">
+      <a 
+        href="https://www.profitableratecpm.com/ibs5zaqf?key=be17333b70911d1e3d3fe6b73762de0f"
+        rel="nofollow" 
+        target="_blank"
+        className="side-banner-link"
+      >
+        <img 
+          alt="banner" 
+          src="https://landings-cdn.adsterratech.com/referralBanners/gif/120x600_adsterra_reff.gif"
+          className="side-banner-image"
+        />
+      </a>
+    </div>
   );
 };
 

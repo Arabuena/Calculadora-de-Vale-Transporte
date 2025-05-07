@@ -504,4 +504,33 @@ button:hover {
   border-radius: 20px;
   font-weight: bold;
   font-size: 0.9rem;
+}
+
+/* Estilos para o banner lateral */
+.side-banner-container {
+  position: fixed;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: none; /* Esconde em telas pequenas */
+}
+
+.side-banner-image {
+  width: 120px;
+  height: 600px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Mostra o banner apenas em telas grandes */
+@media (min-width: 1200px) {
+  .side-banner-container {
+    display: block;
+  }
+
+  /* Ajusta o padding do conteúdo principal para dar espaço ao banner */
+  .app {
+    padding-right: 150px;
+  }
 } 
