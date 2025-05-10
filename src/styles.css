@@ -547,4 +547,43 @@ button:hover {
   cursor: pointer !important;
   opacity: 1 !important;
 }
+
+/* Adicione no final do arquivo styles.css */
+.custom-calendar {
+  width: 100% !important;
+  border: none !important;
+  font-family: inherit;
+}
+
+.react-datepicker {
+  border: none !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  width: 100% !important;
+}
+
+.react-datepicker__day--highlighted-holiday {
+  background-color: #e3f2fd !important;
+  color: #1976d2 !important;
+  font-weight: bold;
+}
+
+.react-datepicker__day--highlighted {
+  background-color: #fff3cd !important;
+  color: #856404 !important;
+}
+
+.react-datepicker__day:hover {
+  background-color: #e6e6e6 !important;
+}
+
+.react-datepicker__header {
+  background-color: white !important;
+  border-bottom: none !important;
+}
+
+.react-datepicker__day--selected {
+  background-color: #1976d2 !important;
+  color: white !important;
+}
   
