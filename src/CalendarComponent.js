@@ -41,6 +41,11 @@ const CalendarComponent = ({ onChange }) => {
       onClickDay={handleDateClick}
       tileClassName={tileClassName}
       locale="pt-BR"
+      maxDate={new Date(2100, 11, 31)}
+      minDate={new Date(1900, 0, 1)}
+      tileDisabled={null}
+      allowPartialRange={true}
+      selectRange={false}
     />
   );
 };
