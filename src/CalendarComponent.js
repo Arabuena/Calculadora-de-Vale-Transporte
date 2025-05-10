@@ -1,23 +1,14 @@
 // CalendarComponent.js
 import React, { useState } from 'react';
-import DatePicker from 'react-datepicker';
+import Calendar from 'react-calendar';
 import { isSameDay, parseISO } from 'date-fns';
-import { registerLocale, setDefaultLocale } from 'react-datepicker';
-import ptBR from 'date-fns/locale/pt-BR';
 import { holidays } from './holidays';
-import 'react-datepicker/dist/react-datepicker.css';
 import './styles.css';
-
-// Registra o locale português
-registerLocale('pt-BR', ptBR);
-setDefaultLocale('pt-BR');
 
 const CalendarComponent = ({ onChange }) => {
   const [selectedDates, setSelectedDates] = useState([]);
 
   const handleDateClick = (date) => {
-    if (!date) return;
-    
     const alreadySelected = selectedDates.some((selectedDate) =>
       isSameDay(selectedDate, date)
     );
@@ -34,27 +25,29 @@ const CalendarComponent = ({ onChange }) => {
     onChange(newDates);
   };
 
-  const isHoliday = (date) => {
-    return holidays.some((holiday) => isSameDay(parseISO(holiday), date));
+  const tileClassName = ({ date }) => {
+    const isHoliday = holidays.some((holiday) =>
+      isSameDay(parseISO(holiday), date)
+    );
+    const isSelected = selectedDates.some((selectedDate) =>
+      isSameDay(selectedDate, date)
+    );
+    if (isHoliday) return 'holiday';
+    if (isSelected) return 'selected';
+    return '';
   };
 
   return (
-    <DatePicker
-      inline
-      selected={null}
-      onChange={handleDateClick}
-      highlightDates={selectedDates}
+    <Calendar
+      onClickDay={handleDateClick}
+      tileClassName={tileClassName}
       locale="pt-BR"
-      dateFormat="P"
-      showMonthDropdown
-      showYearDropdown
-      dropdownMode="select"
-      calendarClassName="custom-calendar"
-      enableTabLoop={false}
-      disabledKeyboardNavigation
-      excludeDates={[]}
-      filterDate={() => true}
-      strictParsing={false}
+      tileDisabled={null}
+      showNeighboringMonth={true}
+      allowPartialRange={true}
+      selectRange={false}
+      goToRangeStartOnSelect={false}
+      returnValue="start"
     />
   );
 };

@@ -49,98 +49,56 @@ h1 {
   border: none !important;
   border-radius: 8px;
   padding: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   background: white;
 }
 
-.react-calendar__navigation {
-  height: 35px !important;
-  margin-bottom: 0.5em !important;
-  display: flex;
-  align-items: center;
-}
-
-.react-calendar__navigation button {
-  min-width: 35px !important;
-  padding: 0 !important;
-  height: 35px !important;
-  font-size: 0.9em !important;
-  background: none;
-  color: #2c3e50;
-  font-weight: 500;
-}
-
-.react-calendar__navigation__label {
-  flex-grow: 1 !important;
-  font-weight: bold !important;
-  color: #2c3e50 !important;
-  font-size: 1em !important;
-  text-transform: capitalize;
-}
-
-.react-calendar__month-view__weekdays {
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 0.8em;
-  color: #666;
+.react-calendar button {
+  margin: 0;
+  border: 0;
+  outline: none;
+  color: inherit !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  opacity: 1 !important;
 }
 
 .react-calendar__tile {
-  position: relative;
-  padding: 12px !important;
-  font-size: 14px;
-  border-radius: 4px;
-  color: #333;
+  max-width: 100%;
+  padding: 10px 6.6667px;
+  background: none;
+  text-align: center;
+  line-height: 16px;
+  cursor: pointer !important;
+  pointer-events: auto !important;
 }
 
-.react-calendar__tile:enabled:hover,
-.react-calendar__tile:enabled:focus {
-  background-color: #e6e6e6 !important;
+.react-calendar__tile:disabled {
+  background-color: transparent !important;
+  color: inherit !important;
+  cursor: pointer !important;
 }
 
 .react-calendar__tile--now {
-  background: #f0f0f0;
+  background: #e6e6e6;
 }
 
-/* Estilo para feriados */
-.holiday {
-  background-color: #fff3cd !important; /* Amarelo claro */
-  color: #856404 !important; /* Texto em marrom */
-  position: relative;
-  font-weight: 500;
+.react-calendar__tile--active {
+  background: #2196f3;
+  color: white;
 }
 
-.holiday::after {
-  content: '🏖️';
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  font-size: 8px;
-}
-
-/* Estado hover do feriado */
-.holiday:enabled:hover,
-.holiday:enabled:focus {
-  background-color: #ffeeba !important;
-  color: #533f03 !important;
-}
-
-/* Quando um feriado está selecionado */
-.holiday.selected {
-  background-color: #17a2b8 !important; /* Azul mais vibrante */
-  color: white !important;
-  font-weight: bold;
+.react-calendar__tile--hasActive {
+  background: #2196f3;
 }
 
 .selected {
-  background-color: #e3f2fd !important;
-  color: #1976d2 !important;
-  font-weight: bold;
+  background-color: #2196f3 !important;
+  color: white !important;
 }
 
-.selected:enabled:hover,
-.selected:enabled:focus {
-  background-color: #bbdefb !important;
+.holiday {
+  background-color: #fff3cd !important;
+  color: #856404 !important;
 }
 
 /* Estilo do resumo */
