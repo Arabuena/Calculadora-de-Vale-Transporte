@@ -50,11 +50,11 @@ const CalendarComponent = ({ onChange }) => {
       showYearDropdown
       dropdownMode="select"
       calendarClassName="custom-calendar"
-      minDate={null}
-      maxDate={null}
-      openToDate={new Date()}
-      isClearable={true}
-      shouldCloseOnSelect={false}
+      enableTabLoop={false}
+      disabledKeyboardNavigation
+      excludeDates={[]}
+      filterDate={() => true}
+      strictParsing={false}
     />
   );
 };

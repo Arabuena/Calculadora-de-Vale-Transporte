@@ -590,4 +590,22 @@ button:hover {
   color: inherit !important;
   background-color: transparent !important;
 }
+
+/* Adicione estes estilos */
+.react-datepicker__day {
+  cursor: pointer !important;
+}
+
+.react-datepicker__day--disabled,
+.react-datepicker__day--excluded {
+  cursor: pointer !important;
+  color: inherit !important;
+  background-color: transparent !important;
+  pointer-events: auto !important;
+}
+
+.react-datepicker__day--outside-month {
+  color: #666 !important;
+  pointer-events: auto !important;
+}
   
