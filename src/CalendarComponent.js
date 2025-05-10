@@ -42,17 +42,24 @@ const CalendarComponent = ({ onChange }) => {
     return classes.join(' ');
   };
 
+  // Função que sempre retorna false para evitar desabilitar qualquer data
+  const tileDisabled = ({ date, view }) => false;
+
   return (
     <Calendar
       onClickDay={handleDateClick}
       tileClassName={tileClassName}
+      tileDisabled={tileDisabled}
       locale="pt-BR"
       value={null}
-      tileDisabled={null}
       showNeighboringMonth={true}
       selectRange={false}
       view="month"
       className="custom-calendar"
+      minDate={null}
+      maxDate={null}
+      minDetail="decade"
+      enabled={true}
     />
   );
 };
