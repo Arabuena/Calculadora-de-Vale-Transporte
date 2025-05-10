@@ -26,15 +26,20 @@ const CalendarComponent = ({ onChange }) => {
   };
 
   const tileClassName = ({ date }) => {
+    const classes = [];
+    
     const isHoliday = holidays.some((holiday) =>
       isSameDay(parseISO(holiday), date)
     );
+    
     const isSelected = selectedDates.some((selectedDate) =>
       isSameDay(selectedDate, date)
     );
-    if (isHoliday) return 'holiday';
-    if (isSelected) return 'selected';
-    return '';
+    
+    if (isHoliday) classes.push('holiday');
+    if (isSelected) classes.push('selected');
+    
+    return classes.join(' ');
   };
 
   return (
@@ -42,12 +47,12 @@ const CalendarComponent = ({ onChange }) => {
       onClickDay={handleDateClick}
       tileClassName={tileClassName}
       locale="pt-BR"
+      value={null}
       tileDisabled={null}
       showNeighboringMonth={true}
-      allowPartialRange={true}
       selectRange={false}
-      goToRangeStartOnSelect={false}
-      returnValue="start"
+      view="month"
+      className="custom-calendar"
     />
   );
 };
