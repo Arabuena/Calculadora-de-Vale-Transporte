@@ -43,16 +43,18 @@ const CalendarComponent = ({ onChange }) => {
       inline
       selected={null}
       onChange={handleDateClick}
-      highlightDates={[
-        { 'react-datepicker__day--highlighted-holiday': selectedDates },
-        { 'react-datepicker__day--highlighted': holidays.map(h => parseISO(h)) }
-      ]}
+      highlightDates={selectedDates}
       locale="pt-BR"
       dateFormat="P"
       showMonthDropdown
       showYearDropdown
       dropdownMode="select"
       calendarClassName="custom-calendar"
+      minDate={null}
+      maxDate={null}
+      openToDate={new Date()}
+      isClearable={true}
+      shouldCloseOnSelect={false}
     />
   );
 };
