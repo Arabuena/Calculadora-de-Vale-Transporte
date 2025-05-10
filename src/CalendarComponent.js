@@ -33,7 +33,7 @@ const CalendarComponent = ({ onChange }) => {
     );
     if (isHoliday) return 'holiday';
     if (isSelected) return 'selected';
-    return null;
+    return '';
   };
 
   return (
@@ -41,11 +41,11 @@ const CalendarComponent = ({ onChange }) => {
       onClickDay={handleDateClick}
       tileClassName={tileClassName}
       locale="pt-BR"
-      maxDate={new Date(2100, 11, 31)}
-      minDate={new Date(1900, 0, 1)}
-      tileDisabled={null}
-      allowPartialRange={true}
-      selectRange={false}
+      tileDisabled={({ date }) => false}
+      showNeighboringMonth={true}
+      defaultView="month"
+      calendarType="US"
+      formatDay={(locale, date) => date.getDate()}
     />
   );
 };
