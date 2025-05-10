@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import { isSameDay, parseISO } from 'date-fns';
-import { ptBR } from 'date-fns/locale';
 import { holidays } from './holidays';
 import './styles.css';
 
@@ -19,7 +18,7 @@ const CalendarComponent = ({ onChange }) => {
         (selectedDate) => !isSameDay(selectedDate, date)
       );
     } else {
-      newDates = [...selectedDates, date].sort((a, b) => a - b);
+      newDates = [...selectedDates, date];
     }
     setSelectedDates(newDates);
     onChange(newDates);
@@ -41,9 +40,6 @@ const CalendarComponent = ({ onChange }) => {
     <Calendar
       onClickDay={handleDateClick}
       tileClassName={tileClassName}
-      minDetail="year"
-      maxDetail="month"
-      minDate={new Date(2000, 0, 1)}
       locale="pt-BR"
     />
   );
